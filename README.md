@@ -1,18 +1,15 @@
-# Simulação temporizador de um disparo (One Shot) no Raspberry Pi Pico W
+Visão Geral
+Este repositório contém um programa escrito em C para o Raspberry Pi Pico W, utilizando o Pico SDK. O código implementa:
 
-## Introdução
-Este repositório contém um programa em C desenvolvido para o Raspberry Pi Pico W, utilizando o Pico SDK. O código implementa:
-- One Shot (temporizador de um disparo com botão) - Um sistema em que um botão aciona três LEDs simultaneamente e eles apagam um de cada vez, a cada 3 segundos.
+One Shot (temporizador de disparo com botão) - Um sistema em que, ao pressionar um botão, três LEDs acendem simultaneamente e se apagam um a um a cada 3 segundos.
+O código foi testado com o simulador Wokwi e a ferramenta educacional BitDogLab.
 
-O código foi testado utilizando o simulador Wokwi e a ferramenta educacional BitDogLab.
+Como Funciona
+Quando o botão é pressionado, os três LEDs acendem simultaneamente. A cada 3 segundos, um LED é apagado na seguinte sequência:
 
-## Funcionamento
-Quando o botão é pressionado, os três LEDs acendem ao mesmo tempo. A cada **3 segundos**, um LED é desligado na seguinte ordem:
+O LED Azul é desligado primeiro.
+O LED Vermelho é desligado em seguida.
+O LED Verde é o último a ser desligado.
+O botão só pode ser pressionado novamente depois que todos os LEDs estiverem apagados. Um sistema de debounce é utilizado para evitar leituras incorretas do botão.
 
-- LED Azul desliga primeiro.
-- LED Vermelho desliga em seguida.
-- LED Verde desliga por último.
-
-O botão só pode ser pressionado novamente após todos os LEDs serem desligados. Um sistema de debounce evita leituras erradas do botão.
-
-Vídeo do resultado final na placa física: https://drive.google.com/file/d/12PHPDY_l2NIGOnF3P9CO98lgZHkA9i-J/view?usp=sharing
+Vídeo do resultado final na placa física: https://drive.google.com/file/d/1r-H9kxK9NMPltdlSgtHPChQ7WoNDlPfF/view?usp=sharing
